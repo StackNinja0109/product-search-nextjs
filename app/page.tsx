@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <main>
+import SearchPage from '@/features/SearchPage'
 
-    </main>
-  )
+export default function Home() {
+  return <SearchPage />
 }
