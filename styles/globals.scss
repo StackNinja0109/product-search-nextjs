@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@mixin font-face($name, $file, $weight) {
+  @font-face {
+    font-family: $name;
+    src: url("/fonts/#{$file}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: normal;
+    unicode-range: U+0000-002F, U+003A-0040, U+005B-0060, U+007B-3000, U+3000-30FF, U+4E00-9FFF, U+FF00-FFEF;
+    font-display: swap;
+  }
+}
+
+@include font-face("YuGothic", "yu-gothic-regular", 400);
+@include font-face("YuGothic", "yu-gothic-medium", 500);
+@include font-face("YuGothic", "yu-gothic-semibold", 600);
+@include font-face("YuGothic", "yu-gothic-bold", 700);
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", Verdana, Meiryo, "M+ 1p", sans-serif;
+  font-weight: 500;
+  color: #484848;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
