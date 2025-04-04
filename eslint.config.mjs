@@ -2,7 +2,6 @@ import pluginNext from "@next/eslint-plugin-next";
 import pluginImport from "eslint-plugin-import";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
-import pluginStorybook from "eslint-plugin-storybook";
 import pluginUnusedImports from "eslint-plugin-unused-imports";
 import pluginTypeScriptEslint from "typescript-eslint";
 
@@ -132,40 +131,9 @@ const tsEslintConfigs = [
   },
 ];
 
-const storybookConfigs = [
-  {
-    files: ["*.stories.@(ts|tsx)", "*.story.@(ts|tsx)"],
-    plugins: {
-      storybook: pluginStorybook,
-    },
-    rules: {
-      "import/no-anonymous-default-export": "off",
-      "storybook/await-interactions": "error",
-      "storybook/context-in-play-function": "error",
-      "storybook/default-exports": "error",
-      "storybook/hierarchy-separator": "warn",
-      "storybook/no-redundant-story-name": "warn",
-      "storybook/prefer-pascal-case": "warn",
-      "storybook/story-exports": "error",
-      "storybook/use-storybook-expect": "error",
-      "storybook/use-storybook-testing-library": "error",
-    },
-  },
-  {
-    files: [".storybook/main.@(ts)"],
-    plugins: {
-      storybook: pluginStorybook,
-    },
-    rules: {
-      "storybook/no-uninstalled-addons": "error",
-    },
-  },
-];
-
 export default pluginTypeScriptEslint.config(
   { ignores: ["**/.next/**", "**/public/**"] },
   reactConfig,
   importConfig,
-  ...tsEslintConfigs,
-  ...storybookConfigs
+  ...tsEslintConfigs
 );
