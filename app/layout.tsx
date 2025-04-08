@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import HolyLoader from 'holy-loader'
 import { type Metadata, type Viewport } from 'next'
 import Providers from './providers'
+import Header from '@/components/header'
 import ScrollTopButton from '@/components/scroll-top-button'
 import TailwindIndicator from '@/components/tailwind-indicator'
 import { env } from '@/lib/config'
@@ -65,13 +66,16 @@ export default function RootLayout({
       <html lang='jp' suppressHydrationWarning>
         <body>
           <HolyLoader
-            color="#9333ea"
-            height="1px"
+            color="#2563eb"
+            height="2px"
             easing="linear"
           />
           <Providers>
             <div className='flex flex-col w-full min-h-screen overflow-y-auto'>
-              {children}
+              <Header />
+              <main className="w-full flex flex-col min-h-[calc(100vh-80px)] mt-20">
+                {children}
+              </main>
               <ScrollTopButton />
             </div>
 

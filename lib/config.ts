@@ -5,4 +5,5 @@ export const env = {
   NEXT_PUBLIC_HOST: process.env.NEXT_PUBLIC_HOST || 'http://localhost:3000',
   API_ENDPOINT: process.env.API_ENDPOINT || 'http://localhost:8000',
   API_TOKEN: process.env.API_TOKEN || '',
+  GEMINI_API_KEY: process.env.GEMINI_API_KEY || '',
 }

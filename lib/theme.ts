@@ -31,16 +31,17 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         contained: {
-          backgroundColor: '#4f46e5',
+          backgroundColor: '#2563eb',
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
           borderRadius: '2px',
-          padding: '7px',
+          padding: '7px 20px',
           fontSize: '16px',
           color: '#fff',
+          fontWeight: 'bold',
           '&:hover': {
-            backgroundColor: '#3f40d5',
+            backgroundColor: '#1d4ed8',
           },
         },
       },
