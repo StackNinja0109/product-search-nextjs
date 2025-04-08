@@ -41,7 +41,7 @@ const SearchPage = () => {
     .slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
+    <div className="flex flex-col grow bg-gradient-to-b from-gray-50 via-gray-100 to-gray-50">
       <main className="container mx-auto px-4 py-12">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold text-gray-700 tracking-tight">
